@@ -40,6 +40,11 @@ class ExercisePage : Fragment() {
             startActivity(intent)
             activity?.finish()
         }
+        standingCrunchButton.setOnClickListener {
+            intent.putExtra("typeOfExercise","standingCrunch")
+            startActivity(intent)
+            activity?.finish()
+        }
 
     }
 

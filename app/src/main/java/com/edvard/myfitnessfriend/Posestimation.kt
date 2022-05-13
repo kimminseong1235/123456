@@ -1,5 +1,6 @@
 package com.edvard.myfitnessfriend
 
+import android.app.ProgressDialog.show
 import android.content.Context
 import java.util.ArrayList
 import android.graphics.PointF
@@ -10,7 +11,19 @@ import com.android.volley.RequestQueue
 import kotlin.math.abs
 import kotlin.math.acos
 import kotlin.math.sqrt
+import com.edvard.myfitnessfriend.color as color
+import android.util.TypedValue
 
+import android.widget.TextView
+
+import android.view.ViewGroup
+
+
+
+private val PointF.color: Unit
+    get() {}
+private val PointF.paint: Unit
+    get() {}
 
 class Posestimation {
 
@@ -129,18 +142,25 @@ class Posestimation {
                     isSquart = false
                     wrongPoseFlag = true
                     Play_Sound(context, R.raw.squat_knee_waist_error)
+
+                   
                 }
                 else if (calcDist( mDrawPoint[9], mDrawPoint[10]) <= LKADist * 0.7 || calcDist( mDrawPoint[12], mDrawPoint[13]) <= RKADist * 0.7 && !isSquart){
                     //무릎만 앞으로 나왔을 경우 무릎을 뒤로 빼라는 음성 피드백을 출력한다.
                     isSquart = false
                     wrongPoseFlag = true
+                    Toast.makeText(context, "무릎을 뒤로 좀더 빼세요", Toast.LENGTH_SHORT).show()
                     Play_Sound(context, R.raw.squat_knee_error)
+
+
                 }
                 else if(calcDist( mDrawPoint[1], mDrawPoint[8]) <= LNHDist *0.8 && calcDist( mDrawPoint[1], mDrawPoint[11]) < RNHDist*0.8 && !isSquart){
                     //허리만 앞으로 나왔을 경우 허리를 피라는 음성 피드백을 출력한다.
                     isSquart = false
                     wrongPoseFlag = true
+                    Toast.makeText(context, "허리를 피세요", Toast.LENGTH_SHORT).show()
                     Play_Sound(context, R.raw.squat_waist_error)
+
                 }
                 else {
                     //위에 있는 잘못 된 조건에 해당되지 않을 경우 올바른 자세로 인식한다.
@@ -191,24 +211,31 @@ class Posestimation {
                 }
                 else if(wrongKneeError_lunge || wrongWaistError_lunge || wrong90Error_lunge){
                     if(wrongKneeError_lunge && wrongWaistError_lunge && wrong90Error_lunge && !exist90){
+                       Toast.makeText(context, "틀렷습니다.", Toast.LENGTH_SHORT).show()
                         Play_Sound(context, R.raw.lunge_all_error)
                     }
                     else if(wrong90Error_lunge && wrongWaistError_lunge && !exist90){
+                        Toast.makeText(context, "허리를 90도로 하세요", Toast.LENGTH_SHORT).show()
                         Play_Sound(context, R.raw.lunge_90_waist_error)
                     }
                     else if(wrong90Error_lunge && wrongKneeError_lunge && !exist90){
+                        Toast.makeText(context, "무릎을 90도로 맞추세요", Toast.LENGTH_SHORT).show()
                         Play_Sound(context, R.raw.lunge_90_knee_error)
                     }
                     else if(wrongKneeError_lunge && wrongWaistError_lunge){
+                        Toast.makeText(context, "허리를 피세요.", Toast.LENGTH_SHORT).show()
                         Play_Sound(context, R.raw.lunge_knee_waist_error)
                     }
                     else if(wrongWaistError_lunge){
+                        Toast.makeText(context, "틀렷습니다.", Toast.LENGTH_SHORT).show()
                         Play_Sound(context, R.raw.squat_waist_error)
                     }
                     else if(wrongKneeError_lunge){
+                        Toast.makeText(context, "무릎을 더 굽히세요.", Toast.LENGTH_SHORT).show()
                         Play_Sound(context, R.raw.lunge_knee_error)
                     }
                     else if(wrong90Error_lunge && !exist90){
+                        Toast.makeText(context, "너무 조금 굽혓습니다.", Toast.LENGTH_SHORT).show()
                         Play_Sound(context, R.raw.lunge_90_error)
                     }
                     wrongWaistError_lunge = false
@@ -288,6 +315,7 @@ class Posestimation {
             if(calcDist(lKnee,lElbow) <= 95.0 && mDrawPoint[1].x.toDouble() != 0.0 && rlFlag == 2) {
                 if(lKnee.y > mDrawPoint[8].y*0.85){
                     wrongPoseFlag = true
+                    Toast.makeText(context, "틀렷습니다.", Toast.LENGTH_SHORT).show()
                     Play_Sound(context, R.raw.standingcrunch_error)
                 }
                 else if(!wrongPoseFlag){
@@ -302,6 +330,7 @@ class Posestimation {
                 if(rKnee.y > mDrawPoint[11].y*0.85){
                     //Error
                     wrongPoseFlag = true
+                    Toast.makeText(context, "틀렷습니다.", Toast.LENGTH_SHORT).show()
                     Play_Sound(context, R.raw.standingcrunch_error)
                 }
                 else if(!wrongPoseFlag){
@@ -413,4 +442,12 @@ class Posestimation {
         }
 
     }
+}
+
+private fun <E> ArrayList<E>.getColor(gray: Int, e: E?) {
+
+}
+
+private fun PointF.getColor(colorBackground: Int, nothing: Nothing?) {
+
 }

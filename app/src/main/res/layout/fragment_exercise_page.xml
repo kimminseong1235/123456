@@ -56,6 +56,19 @@
             android:layout_height="210dp">
 
             <ImageButton
+                android:id="@+id/standingCrunchButton"
+                android:layout_width="136dp"
+                android:layout_height="192dp"
+                android:layout_weight="0"
+                android:background="@drawable/btn_selector"
+                android:src="@drawable/standingcrunch"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.821"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageButton
                 android:id="@+id/plankButton"
                 android:layout_width="136dp"
                 android:layout_height="192dp"

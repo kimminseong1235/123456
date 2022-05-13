@@ -29,6 +29,7 @@ import java.util.ArrayList
 import kotlin.system.measureTimeMillis
 
 
+
 /**
  * Created by edvard on 18-3-23.
  */
@@ -47,7 +48,7 @@ class DrawView : View {
   private var mImgHeight: Int = 0
 
 
-  private val mColorArray = intArrayOf(
+  private var mColorArray = intArrayOf(
       resources.getColor(R.color.color_top, null),
       resources.getColor(R.color.color_neck, null),
       resources.getColor(R.color.color_l_shoulder, null),
@@ -143,6 +144,7 @@ class DrawView : View {
     var prePointF: PointF? = null
     mPaint.color = 0xff87fd00.toInt()
     val p1 = mDrawPoint[1]
+
     for ((index, pointF) in mDrawPoint.withIndex()) {
       println("$index ${pointF.x} ${pointF.y}")
       if (index == 1) continue
@@ -155,10 +157,23 @@ class DrawView : View {
         2, 5, 8, 11 -> {
           canvas.drawLine(p1.x, p1.y, pointF.x, pointF.y, mPaint)
         }
+
+
+
+
+
         else -> {
           if (prePointF != null) {
             mPaint.color = 0xff87fd00.toInt()
             canvas.drawLine(prePointF.x, prePointF.y, pointF.x, pointF.y, mPaint)
+          }
+          if(!Posestimation.wrongPoseFlag !=true) {
+            val p9 = mDrawPoint[9]
+            mPaint.color = 0xb8b8b800.toInt()
+          }
+          else if(!Posestimation.isSquart !=true ) {
+            val p9 = mDrawPoint[9]
+            mPaint.color = 0xff87fd00.toInt()
           }
         }
       }
@@ -175,8 +190,12 @@ class DrawView : View {
         "lunge" -> Posestimation.lunge(context, mDrawPoint)
         "standingCrunch" -> Posestimation.standingCrunch(context, mDrawPoint)
         "plank" -> Posestimation.plank(context, mDrawPoint)
+
       }
+
+
     }
+
   }
 
   override fun onMeasure(
