@@ -35,7 +35,7 @@ class MyPage : Fragment() {
             logoutButton.visibility = View.VISIBLE
             logoutButton.isEnabled = true
             val mRvAdapter = RvAdapter(context!!, AppStat.friendList)
-            friendList.adapter = mRvAdapter
+
 
             val hour = AppStat.myStat.gettotalTime().toInt()/3600
             val min = AppStat.myStat.gettotalTime().toInt()/60 - hour * 60
@@ -43,12 +43,11 @@ class MyPage : Fragment() {
             _time.text="${hour}시간 ${min}분 ${sec}초"
             _calorie.text =AppStat.myStat.gettotalCal().toInt().toString()+" Cal"
             val lm =LinearLayoutManager(context)
-            friendList.layoutManager = lm
-            friendList.setHasFixedSize(true)
+
         }
         else{
             loginButton.isEnabled = true
-            loginButton.text = "로그인 해주세요."
+            loginButton.text = "20170662 김민성"
             logoutButton.visibility = View.INVISIBLE
             logoutButton.isEnabled = false
         }

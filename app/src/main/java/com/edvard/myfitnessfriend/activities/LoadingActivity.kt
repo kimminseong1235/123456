@@ -9,7 +9,7 @@ import com.edvard.myfitnessfriend.R
 class LoadingActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
+        setContentView(R.layout.activity_loading)
 
         Handler().postDelayed({
             val intent = Intent(this, MainActivity::class.java)

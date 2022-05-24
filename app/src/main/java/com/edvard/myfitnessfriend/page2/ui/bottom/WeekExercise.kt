@@ -25,7 +25,7 @@ class WeekExercise : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         val Data2 = AppStat.myStat.getWeekTimeList()
 
-        Chart.drawChart(linechart2, Data2,"날짜","운동시간")
+
     }
     companion object{
         private const val num = "1"

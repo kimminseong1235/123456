@@ -7,6 +7,7 @@ import androidx.viewpager.widget.ViewPager
 import com.edvard.myfitnessfriend.R
 import com.edvard.myfitnessfriend.ui.main.PageAdapter
 import com.google.android.material.tabs.TabLayout
+import java.util.Random
 
 class MainActivity : AppCompatActivity() {
     private var lastBackPressed : Long = 0

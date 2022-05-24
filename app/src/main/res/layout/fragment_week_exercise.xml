@@ -12,17 +12,61 @@
 
         <TextView
             android:id="@+id/textView4"
-            android:layout_width="wrap_content"
+            android:layout_width="428dp"
+            android:layout_height="32dp"
+            android:fontFamily="@font/fontcontent"
+            android:text="친구들과 랭킹을 확인하세요!"
+            android:textColor="@color/black"
+            android:textSize="24sp" />
+
+        <TextView
+            android:id="@+id/textView8"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="7일간 운동 시간"
-            android:fontFamily="@font/fontcontent"/>
+            android:text="1등 김민성 182점"
+            android:textColor="@color/black"
+            android:textSize="34sp" />
 
-        <com.github.mikephil.charting.charts.LineChart
-            android:id="@+id/linechart2"
-            android:layout_width="365dp"
-            android:layout_height="270dp">
+        <TextView
+            android:id="@+id/textView9"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="2등 김지훈 167점"
+            android:textColor="@color/black"
+            android:textSize="34sp" />
 
-        </com.github.mikephil.charting.charts.LineChart>
+        <TextView
+            android:id="@+id/textView10"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="3등 김윤규 145점"
+            android:textColor="@color/black"
+            android:textSize="34sp" />
+
+        <TextView
+            android:id="@+id/textView11"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="4등 김김김    0점"
+            android:textColor="@color/black"
+            android:textSize="34sp" />
+
+        <TextView
+            android:id="@+id/textView12"
+            android:layout_width="451dp"
+            android:layout_height="wrap_content"
+            android:text="5등 협성대    0점"
+            android:textColor="@color/black"
+            android:textSize="34sp" />
+
+        <TextView
+            android:id="@+id/textView13"
+            android:layout_width="match_parent"
+            android:layout_height="41dp"
+            android:text="6등 컴공과    0점"
+            android:textColor="@color/black"
+            android:textSize="34sp" />
+
     </LinearLayout>
 
 </FrameLayout>

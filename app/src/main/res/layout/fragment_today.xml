@@ -25,12 +25,12 @@
             app:layout_constraintVertical_bias="0.099" />
 
         <TextView
-            android:id="@+id/calorie"
+            android:id="@+id/random"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
-            android:text="오늘 소모한 칼로리"
             android:fontFamily="@font/fontcontent"
+            android:text="오늘 획득한 점수"
             android:textColor="#FFFFFF"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -44,14 +44,14 @@
             android:layout_width="41dp"
             android:layout_height="20dp"
             android:layout_marginStart="16dp"
-            android:text="0"
             android:fontFamily="@font/fontcontent"
+            android:text="56"
             android:textColor="#FFE608"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/calorie"
+            app:layout_constraintTop_toBottomOf="@+id/random"
             app:layout_constraintVertical_bias="0.0" />
 
         <TextView
@@ -60,14 +60,14 @@
             android:layout_height="20dp"
             android:layout_marginEnd="308dp"
             android:layout_marginBottom="96dp"
-            android:text="Cal"
             android:fontFamily="@font/fontcontent"
+            android:text="점"
             android:textColor="#FFE608"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.04"
             app:layout_constraintStart_toEndOf="@+id/todayCalorie"
-            app:layout_constraintTop_toBottomOf="@+id/calorie"
+            app:layout_constraintTop_toBottomOf="@+id/random"
             app:layout_constraintVertical_bias="0.0" />
 
         <TextView
@@ -92,7 +92,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:layout_marginTop="2dp"
-            android:text="0시 0분 0초"
+            android:text="0시 10분 42초"
             android:textColor="#FFF400"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"

@@ -21,51 +21,12 @@ class DBRequest(data: HashMap<String, Any>, listener: Response.Listener<String?>
             requestType = type
             when(type){
                 "register" -> {
-                    URL = "http://gkwlsdn95.dothome.co.kr/Register.php"
+                    URL = "http://kimhealth.dothome.co.kr/register.php"
                 }
                 "login" -> {
-                    URL = "http://gkwlsdn95.dothome.co.kr/Login.php"
-                }
-                "addFriend" -> {
-                    URL = "http://gkwlsdn95.dothome.co.kr/Friend.php"
-                }
-                "weekCalorie" -> {
-                    URL = "http://gkwlsdn95.dothome.co.kr/getWeekCalorie.php"
-                }
-                "weekTime" -> {
-                    URL = "http://gkwlsdn95.dothome.co.kr/getWeekTime.php"
-                }
-                "friendCalorie" ->{
-                    URL = "http://gkwlsdn95.dothome.co.kr/getFriendCalorie.php"
-                }
-                "myCalorie" ->{
-                    URL = "http://gkwlsdn95.dothome.co.kr/getFriendCalorie.php"
-                }
-                "getFriend" ->{
-                    URL =  "http://gkwlsdn95.dothome.co.kr/getFriend.php"
+                    URL = "http://kimhealth.dothome.co.kr/login.php"
                 }
 
-                "postCalorie" -> {
-                    URL = "http://gkwlsdn95.dothome.co.kr/postCalorie.php"
-                }
-                "postTime" -> {
-                    URL = "http://gkwlsdn95.dothome.co.kr/postTime.php"
-                }
-                "getTime" -> {
-                    URL = "http://gkwlsdn95.dothome.co.kr/getTime.php"
-                }
-                "getMonthCalorie" -> {
-                    URL = "http://gkwlsdn95.dothome.co.kr/getMonthCalorie.php"
-                }
-                "getMonthTime" -> {
-                    URL = "http://gkwlsdn95.dothome.co.kr/getMonthTime.php"
-                }
-                "getTotalCalorie" -> {
-                    URL = "http://gkwlsdn95.dothome.co.kr/getTotalCalorie.php"
-                }
-                "getTotalTime" -> {
-                    URL = "http://gkwlsdn95.dothome.co.kr/getTotalTime.php"
-                }
             }
         }
     }
@@ -75,7 +36,7 @@ class DBRequest(data: HashMap<String, Any>, listener: Response.Listener<String?>
         map["userID"] = data["userID"].toString()
         when(requestType){
             "login" ->{
-                //URL = "http://gkwlsdn95.dothome.co.kr/Login.php"
+                //URL = "http://kimhealth.dothome.co.kr/Login.php"
                 map["userPassword"] = data["userPassword"].toString()
             }
             "addFriend" -> {

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/login_background"
+    android:background="@drawable/btn_border"
     tools:context=".activities.RegisterActivity">
 
     <EditText
@@ -29,8 +29,8 @@
         android:layout_marginTop="16dp"
         android:ems="10"
         android:hint="비밀번호"
-        android:textColor="#000000"
         android:inputType="textPassword"
+        android:textColor="#000000"
         app:layout_constraintEnd_toEndOf="@+id/et_id"
         app:layout_constraintStart_toStartOf="@+id/et_id"
         app:layout_constraintTop_toBottomOf="@+id/et_id" />
@@ -42,8 +42,8 @@
         android:layout_marginTop="16dp"
         android:ems="10"
         android:hint="이름"
-        android:textColor="#000000"
         android:inputType="textPersonName"
+        android:textColor="#000000"
         app:layout_constraintEnd_toEndOf="@+id/et_pass"
         app:layout_constraintStart_toStartOf="@+id/et_pass"
         app:layout_constraintTop_toBottomOf="@+id/et_pass" />
@@ -66,8 +66,8 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:text="회원가입"
         android:background="@drawable/selector_login"
+        android:text="회원가입"
         app:layout_constraintEnd_toEndOf="@+id/et_age"
         app:layout_constraintStart_toStartOf="@+id/et_age"
         app:layout_constraintTop_toBottomOf="@+id/et_age" />

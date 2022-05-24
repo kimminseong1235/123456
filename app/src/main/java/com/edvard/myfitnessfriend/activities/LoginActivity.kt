@@ -22,12 +22,12 @@ class LoginActivity : AppCompatActivity() {
         })
         btn_login.setOnClickListener(View.OnClickListener {
             val userID = et_id.getText().toString()
-            val userPass = et_pass.getText().toString()
+            val userPassword = et_pass.getText().toString()
 
             val rQueue:RequestQueue = DB.makeNewRequestQueue(this)
             val data = HashMap<String, Any>()
             data["userID"] = userID
-            data["userPassword"] = userPass
+            data["userPassword"] = userPassword
             rQueue.addRequestFinishedListener<String> {
                 //val intent = Intent(this@LoginActivity, MainActivity::class.java)
                 //startActivity(intent)
